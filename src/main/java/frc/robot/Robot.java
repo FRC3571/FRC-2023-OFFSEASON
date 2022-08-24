@@ -105,12 +105,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
-    }
+    
   }
 
   /**
@@ -118,6 +113,17 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    double CurrentAngle = m_servo.getAngle();
+
+    while(m_stick.getPOV(0)==90){
+      CurrentAngle+=1;
+      m_servo.setAngle(CurrentAngle);
+    }
+    while(m_stick.getPOV(0)==270){
+      CurrentAngle-=1;
+      m_servo.setAngle(CurrentAngle);
+    }
+    m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());    
   }
 
   @Override
