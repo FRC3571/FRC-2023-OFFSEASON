@@ -1,0 +1,17 @@
+To be made:
+
+module that can handle all motor controllers including servos, and wheels
+
+Existing tools:
+    motor controller
+    servo controller
+
+
+need to make class that takes inputs and works accordingly regardless of autonomous or  teleop
+
+Steps:
+make new class that interacgts w everything
+remove useless code for better filesize
+
+
+

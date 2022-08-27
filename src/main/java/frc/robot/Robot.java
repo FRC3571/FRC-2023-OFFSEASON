@@ -106,6 +106,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     
+    
   }
 
   /**
@@ -113,6 +114,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    
     double CurrentAngle = m_servo.getAngle();
 
     while(m_stick.getPOV(0)==90){
@@ -123,7 +125,7 @@ public class Robot extends TimedRobot {
       CurrentAngle-=1;
       m_servo.setAngle(CurrentAngle);
     }
-    m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());    
+    m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());
   }
 
   @Override
@@ -143,7 +145,6 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
 
-  
     double CurrentAngle = m_servo.getAngle();
 
     while(m_stick.getPOV(0)==90){
